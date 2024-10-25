@@ -8,6 +8,7 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
     {
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired(true).HasColumnOrder(1);
             builder.Property(x => x.CreatedAt).IsRequired(false).HasColumnType("datetime2");
             builder.Property(x => x.UpdatedAt).IsRequired(false).HasColumnType("datetime2");
