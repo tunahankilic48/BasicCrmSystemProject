@@ -15,13 +15,13 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
                 .HasColumnType("NVARCHAR(50)")
                 .HasColumnOrder(2);
 
-            builder.Property(x => x.Username)
+            builder.Property(x => x.Password)
                 .IsRequired(true)
                 .IsUnicode(true)
                 .HasColumnType("NVARCHAR(100)")
                 .HasColumnOrder(3);
 
-            builder.Property(x => x.Username)
+            builder.Property(x => x.RoleId)
                 .IsRequired(true)
                 .HasColumnOrder(4);
 
