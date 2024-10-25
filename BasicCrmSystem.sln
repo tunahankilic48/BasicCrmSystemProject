@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicCrmSystem_Domain", "BasicCrmSystem_Domain\BasicCrmSystem_Domain.csproj", "{804930A7-DD83-4CCF-BA49-0D060047612D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{804930A7-DD83-4CCF-BA49-0D060047612D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804930A7-DD83-4CCF-BA49-0D060047612D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804930A7-DD83-4CCF-BA49-0D060047612D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804930A7-DD83-4CCF-BA49-0D060047612D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E029FA79-2F47-4D50-884F-D81EA7AE448B}
+	EndGlobalSection
+EndGlobal
