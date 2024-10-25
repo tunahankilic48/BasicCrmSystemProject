@@ -6,7 +6,7 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
 {
     internal class CustomerConfig : BaseEntityConfig<Customer>
     {
-        public void Configure(EntityTypeBuilder<Customer> builder)
+        public override void Configure(EntityTypeBuilder<Customer> builder)
         {
 
             builder.Property(x => x.FirstName)

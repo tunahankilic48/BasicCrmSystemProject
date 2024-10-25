@@ -6,7 +6,7 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
 {
     internal class UserConfig : BaseEntityConfig<User>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public override void Configure(EntityTypeBuilder<User> builder)
         {
 
             builder.Property(x => x.Username)

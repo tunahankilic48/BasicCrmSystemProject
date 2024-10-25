@@ -6,7 +6,7 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
 {
     internal class RoleConfig : BaseEntityConfig<Role>
     {
-        public void Configure(EntityTypeBuilder<Role> builder)
+        public override void Configure(EntityTypeBuilder<Role> builder)
         {
 
             builder.Property(x => x.Name)

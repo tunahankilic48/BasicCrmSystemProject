@@ -6,7 +6,7 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
 {
     internal class RegionConfig : BaseEntityConfig<Region>
     {
-        public void Configure(EntityTypeBuilder<Region> builder)
+        public override void Configure(EntityTypeBuilder<Region> builder)
         {
 
             builder.Property(x => x.Name)
