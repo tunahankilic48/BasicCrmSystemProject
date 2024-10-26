@@ -45,8 +45,8 @@ namespace BasicCrmSystem_Infrastructure.Repositories
         public async Task<TResult> GetFilteredFirstOrDefault<TResult>(
                     Expression<Func<TEntity, TResult>> select,
                     Expression<Func<TEntity, bool>> where, Func<IQueryable<TEntity>,
-                    IOrderedQueryable<TEntity>> orderby = null, Func<IQueryable<TEntity>,
-                    IIncludableQueryable<TEntity, object>> include = null)
+                    IOrderedQueryable<TEntity>> orderby = null!, Func<IQueryable<TEntity>,
+                    IIncludableQueryable<TEntity, object>> include = null!)
         {
             IQueryable<TEntity> query = _table;
 
@@ -73,8 +73,8 @@ namespace BasicCrmSystem_Infrastructure.Repositories
         public async Task<List<TResult>> GetFilteredList<TResult>(
                     Expression<Func<TEntity, TResult>> select,
                     Expression<Func<TEntity, bool>> where, Func<IQueryable<TEntity>,
-                    IOrderedQueryable<TEntity>> orderby = null, Func<IQueryable<TEntity>,
-                    IIncludableQueryable<TEntity, object>> include = null)
+                    IOrderedQueryable<TEntity>> orderby = null!, Func<IQueryable<TEntity>,
+                    IIncludableQueryable<TEntity, object>> include = null!)
         {
             IQueryable<TEntity> query = _table;
 
