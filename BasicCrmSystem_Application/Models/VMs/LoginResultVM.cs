@@ -2,9 +2,9 @@
 
 namespace BasicCrmSystem_Application.Models.VMs
 {
-    public class ResultVM
+    public class LoginResultVM
     {
-        public ResultVM(Result result, string message)
+        public LoginResultVM(Result result, string message)
         {
             Result = result;
             Message = message;

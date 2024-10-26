@@ -5,6 +5,6 @@ namespace BasicCrmSystem_Application.Services.AccountService
 {
     internal interface IAccountService
     {
-        Task<ResultVM> Login(LoginDTO model);
+        Task<LoginResultVM> Login(LoginDTO model);
     }
 }

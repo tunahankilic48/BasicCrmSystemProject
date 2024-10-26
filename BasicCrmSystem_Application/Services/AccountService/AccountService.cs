@@ -14,18 +14,18 @@ namespace BasicCrmSystem_Application.Services.AccountService
             _userRepository = userRepository;
         }
 
-        public async Task<ResultVM> Login(LoginDTO model)
+        public async Task<LoginResultVM> Login(LoginDTO model)
         {
             User user = await _userRepository.GetDefault(x => x.Username == model.Username);
             if (user == null)
             {
-                return new ResultVM(Result.Failed,"Girilen kullanıcı adı bulunamadı!");
+                return new LoginResultVM(Result.Failed,"Girilen kullanıcı adı bulunamadı!");
             }
             if (user.Password != model.Password)
             {
-                return new ResultVM(Result.Failed, "Girilen parola yanlış!!!");
+                return new LoginResultVM(Result.Failed, "Girilen parola yanlış!!!");
             }
-            return new ResultVM(Result.Success, "Giriş başarılı!");
+            return new LoginResultVM(Result.Success, "Giriş başarılı!");
         }
     }
 }
