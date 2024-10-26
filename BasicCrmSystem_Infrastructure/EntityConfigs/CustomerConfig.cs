@@ -12,19 +12,19 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
             builder.Property(x => x.FirstName)
                 .IsRequired(true)
                 .IsUnicode(true)
-                .HasColumnType("NVARCHAR(50)")
+                .HasColumnType("VARCHAR(50)")
                 .HasColumnOrder(2);
 
             builder.Property(x => x.LastName)
                 .IsRequired(true)
                 .IsUnicode(true)
-                .HasColumnType("NVARCHAR(50)")
+                .HasColumnType("VARCHAR(50)")
                 .HasColumnOrder(3);
 
             builder.Property(x => x.Email)
                 .IsRequired(true)
                 .IsUnicode(true)
-                .HasColumnType("NVARCHAR(200)")
+                .HasColumnType("VARCHAR(200)")
                 .HasColumnOrder(4);
 
             builder.Property(x => x.RegionId)
