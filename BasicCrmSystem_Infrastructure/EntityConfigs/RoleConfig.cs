@@ -12,7 +12,7 @@ namespace BasicCrmSystem_Infrastructure.EntityConfigs
             builder.Property(x => x.Name)
                 .IsRequired(true)
                 .IsUnicode(true)
-                .HasColumnType("NVARCHAR(50)")
+                .HasColumnType("VARCHAR(50)")
                 .HasColumnOrder(2);
 
             //Foreign Key
