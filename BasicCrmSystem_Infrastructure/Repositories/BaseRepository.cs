@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace BasicCrmSystem_Infrastructure.Repositories
 {
-    internal class BaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> where TEntity : class
     {
         private readonly PostgreSqlDbContext _context;
         protected DbSet<TEntity> _table;
