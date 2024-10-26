@@ -34,7 +34,9 @@ namespace BasicCrmSystem_Infrastructure.Repositories
 
         public virtual async Task<TEntity> GetDefault(Expression<Func<TEntity, bool>> expression)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return await _table.FirstOrDefaultAsync(expression);
+#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public async Task<List<TEntity>> GetDefaults(Expression<Func<TEntity, bool>> expression)
@@ -62,11 +64,15 @@ namespace BasicCrmSystem_Infrastructure.Repositories
 
             if (orderby != null)
             {
+#pragma warning disable CS8603 // Possible null reference return.
                 return await orderby(query).Select(select).FirstOrDefaultAsync();
+#pragma warning restore CS8603 // Possible null reference return.
             }
             else
             {
+#pragma warning disable CS8603 // Possible null reference return.
                 return await query.Select(select).FirstOrDefaultAsync();
+#pragma warning restore CS8603 // Possible null reference return.
             }
         }
 
