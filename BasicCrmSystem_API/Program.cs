@@ -1,5 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using BasicCrmSystem_API.ErrorHandling;
 using BasicCrmSystem_Application.IoC;
 using BasicCrmSystem_Infrastructure.DatabaseContext;
 using BasicCrmSystem_Infrastructure.SeedData;
@@ -39,6 +40,8 @@ builder.Services.AddSwaggerGen(c => {
                 },
         });
 });
+
+builder.Services.AddExceptionHandler<ExceptionHandler>();
 
 builder.Services.AddDbContext<PostgreSqlDbContext>(x =>
 {
@@ -84,7 +87,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseExceptionHandler(_ => { });
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
