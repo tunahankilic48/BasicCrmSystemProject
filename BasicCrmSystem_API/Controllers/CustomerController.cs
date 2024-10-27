@@ -1,6 +1,7 @@
 ﻿using BasicCrmSystem_Application.Models.DTOs;
 using BasicCrmSystem_Application.Models.VMs;
 using BasicCrmSystem_Application.Services.CustomerService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BasicCrmSystem_API.Controllers
@@ -17,13 +18,16 @@ namespace BasicCrmSystem_API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<List<CustomerVM>> GetAll()
         {
             List<CustomerVM> customers = await _customerService.GetAllCustomers();
 
             return customers;
         }
+
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create([FromBody] CreateCustomerDTO model)
         {
             bool result = await _customerService.Create(model);
@@ -34,8 +38,10 @@ namespace BasicCrmSystem_API.Controllers
             }
             return BadRequest();
         }
+
         [HttpPut]
-         public async Task<IActionResult> Update([FromBody] UpdateCustomerDTO model)
+        [Authorize]
+        public async Task<IActionResult> Update([FromBody] UpdateCustomerDTO model)
          {
              bool result = await _customerService.Update(model);
 
@@ -45,14 +51,18 @@ namespace BasicCrmSystem_API.Controllers
              }
              return BadRequest();
          }
+
         [HttpDelete("{id}")]
-         public async Task<IActionResult> Delete(int id)
+        [Authorize]
+        public async Task<IActionResult> Delete(int id)
          {
              await _customerService.Delete(id);
              return Ok();
          }
-         [HttpGet("{id}")]
-         public async Task<UpdateCustomerDTO> GetById(int id)
+
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<UpdateCustomerDTO> GetById(int id)
          {
              UpdateCustomerDTO customer = await _customerService.GetById(id);
              return customer;

@@ -4,6 +4,7 @@ using BasicCrmSystem_Infrastructure.Repositories;
 using BasicCrmSystem_Domain.Repositories;
 using BasicCrmSystem_Application.Services.AccountService;
 using BasicCrmSystem_Application.Services.CustomerService;
+using BasicCrmSystem_Application.Services.TokenService;
 
 
 namespace BasicCrmSystem_Application.IoC
@@ -20,8 +21,7 @@ namespace BasicCrmSystem_Application.IoC
 
             builder.RegisterType<AccountService>().As<IAccountService>().InstancePerLifetimeScope();
             builder.RegisterType<CustomerService>().As<ICustomerService>().InstancePerLifetimeScope();
-
-
+            builder.RegisterType<TokenService>().As<ITokenService>().InstancePerLifetimeScope();
 
 
             #region AutoMapper
