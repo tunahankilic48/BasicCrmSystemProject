@@ -18,6 +18,7 @@ namespace BasicCrmSystem_Application.Services.CustomerService
         public async Task<bool> Create(CreateCustomerDTO model)
         {
             Customer customer = _mapper.Map<Customer>(model);
+            customer.CreatedAt = DateTime.Now;
             return await _customerRepository.Add(customer);
         }
 
@@ -38,8 +39,11 @@ namespace BasicCrmSystem_Application.Services.CustomerService
 
         public async Task<bool> Update(UpdateCustomerDTO model)
         {
-            Customer customer = _mapper.Map<Customer>(model);
-            return await _customerRepository.Update(customer);
+            Customer customer = await _customerRepository.GetDefault(x => x.Id == model.Id);
+            Customer updatedCustomer = _mapper.Map<Customer>(model);
+            updatedCustomer.CreatedAt = customer.CreatedAt;
+            updatedCustomer.UpdatedAt = DateTime.Now;
+            return await _customerRepository.Update(updatedCustomer);
         }
 
         public async Task<List<CustomerVM>> GetAllCustomers()
