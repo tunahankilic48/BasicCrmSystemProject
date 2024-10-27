@@ -14,7 +14,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<PostgreSqlDbContext>(x => x.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); // Connection string will be taken from appsettings.json file
+builder.Services.AddDbContext<PostgreSqlDbContext>(x =>
+{
+    x.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));// Connection string will be taken from appsettings.json file
+    x.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
+});
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 

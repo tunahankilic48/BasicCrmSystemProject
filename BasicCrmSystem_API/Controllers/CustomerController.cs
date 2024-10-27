@@ -45,8 +45,8 @@ namespace BasicCrmSystem_API.Controllers
              }
              return BadRequest();
          }
-        [HttpDelete]
-         public async Task<IActionResult> Delete([FromBody]int id)
+        [HttpDelete("{id}")]
+         public async Task<IActionResult> Delete(int id)
          {
              await _customerService.Delete(id);
              return Ok();
