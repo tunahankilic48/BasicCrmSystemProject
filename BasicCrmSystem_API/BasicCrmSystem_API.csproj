@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BasicCrmSystem_Application\BasicCrmSystem_Application.csproj" />
     <ProjectReference Include="..\BasicCrmSystem_Infrastructure\BasicCrmSystem_Infrastructure.csproj" />
   </ItemGroup>
 
