@@ -1,6 +1,7 @@
 ﻿using BasicCrmSystem_Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System.Linq.Expressions;
 
 namespace BasicCrmSystem_Infrastructure.Repositories
@@ -29,6 +30,7 @@ namespace BasicCrmSystem_Infrastructure.Repositories
 
         public async Task<bool> Delete(TEntity entity)
         {
+            _table.Remove(entity);
             return await Save() > 0;
         }
 
