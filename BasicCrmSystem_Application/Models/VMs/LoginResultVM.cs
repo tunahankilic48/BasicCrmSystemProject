@@ -12,5 +12,8 @@ namespace BasicCrmSystem_Application.Models.VMs
 
         public Result Result { get; set; }
         public string Message { get; set; }
+        public bool? AuthenticateResult { get; set; }
+        public string? AuthToken { get; set; }
+        public DateTime? AccessTokenExpireDate { get; set; }
     }
 }
