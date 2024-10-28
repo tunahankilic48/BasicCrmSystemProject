@@ -40,6 +40,8 @@ builder.Services.AddSwaggerGen(c => {
                 },
         });
 });
+builder.Services
+    .AddInfrastructureDI(builder.Configuration);
 
 builder.Services.AddExceptionHandler<ExceptionHandler>();
 
